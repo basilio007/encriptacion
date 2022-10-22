@@ -13,31 +13,58 @@ public class CriptMain {
 System.out.println("introduce frase");
 frase=lector.nextLine();
 
-
+String jhj = codificar(letras , frase);
+System.out.println("El texto "+frase+" codificado en metodo Cesar es: "+jhj);
 
 	}
 	public static String codificar(String letras,String frase ){
-		String textodescodificado ="";
+		String textcodificado ="";
 		frase = frase.toUpperCase();
+
 		char caracter;
-		for(int i=0; i<letras.length(); i++) {
+		for(int i=0; i<frase.length(); i++) {
 			caracter= frase.charAt(i);
 			int posicion = letras.indexOf(caracter);
 			if (posicion == -1) {
 				
 			
-				textodescodificado+=caracter;
+				textcodificado+=caracter;
 				
 				
 			}else {
-				textodescodificado+=letras.charAt((posicion+3) % letras.length());
+				textcodificado+=letras.charAt((posicion+3) % letras.length());
 			}
 			
 			
 		}
-		return textodescodificado;
+		return textcodificado;
 		
 	}
+	/*public static String descodificar(String letras,String frase ){
+		String textdescodificado ="";
+		frase = frase.toUpperCase();
+		char caracter;
+		for(int i=0; i<frase.length(); i++) {
+			caracter= frase.charAt(i);
+			int posicion = letras.indexOf(caracter);
+			if (posicion == -1) {
+				
+			
+				textdescodificado+=caracter;
+				
+				
+			}else if (posicion = 3 < 0){
+				
+				textdescodificado+=letras.charAt(letras.length() + (posicion - 3));
+			}else {
+				textdescodificado+=letras.charAt(posicion - 3) % (letras.length());
+			}
+			
+			
+		}
+		
+			
+	}*/
 	
 
 }
