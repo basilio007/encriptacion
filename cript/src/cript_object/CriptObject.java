@@ -4,21 +4,21 @@ import java.util.Scanner;
 
 public class CriptObject {
 
-	String frase;
-	int clave;
+	private String frase;
+	private int clave;
 	private static char alfabeto[] ={'A','B','C','D','E','F','G','H','I','J','K','L','M',
 									 'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 
 	public void cript_object() {
-		super();
+		
 	}
-	public cript_object(String frase,int clave) {
-		super();
+	public CriptObject() {
+		
 		this.frase = frase;
 		this.clave = clave;
 	}
-	public CriptObject(String frase, int clave) {
-		super();
+	public void CriptObject(String frase, int clave) {
+		
 		this.frase = frase;
 		this.clave = clave;
 	}
@@ -50,16 +50,37 @@ public class CriptObject {
 				
 		lector2.close();
 				}
-public char[] encriptar[] {
+public char[] encriptar() {
 	
-	char mensajeEncriptado = (char) this.frase.length();
+	char[] mensajeEncriptado = new char [getFrase().length()];
 	
 	for(int i=0; i<this.getFrase().length(); i++) {
 		if(getFrase().charAt(i)==' ') {
 			mensajeEncriptado[i]=getFrase().charAt(i);
+		}else {
+			for(int j=0; j< getAlfabeto().length; j++ ) {
+				if(getFrase().charAt(i)==getAlfabeto()[j]) {
+					
+					if(getClave()<0) {
+						mensajeEncriptado[i]=getAlfabeto()[(j+getClave()+getAlfabeto().length)%getAlfabeto().length];	
+						j=getAlfabeto().length;
+						
+					}else {
+						mensajeEncriptado[i]=getAlfabeto()[(j+getClave())%getAlfabeto().length];	
+						j=getAlfabeto().length;
+						
+					}
+					
+					
+				}else {
+					mensajeEncriptado[i]=getFrase().charAt(i);
+				}
+				
+			}
 		}
 		
 	}
+	return mensajeEncriptado;
 }
 }
 

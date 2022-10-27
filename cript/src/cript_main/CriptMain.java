@@ -2,11 +2,18 @@ package cript_main;
 
 import java.util.Scanner;
 
+import cript_object.CriptObject;
+
 public class CriptMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner lector = new Scanner(System.in);
+		
+		CriptObject prueba = new CriptObject();
+		
+		prueba.lectordatos();
+		System.out.println(prueba.encriptar());
+		
+		/*Scanner lector = new Scanner(System.in);
 		lector.useDelimiter("/n");
 		String letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 		String frase;
@@ -64,9 +71,9 @@ public class CriptMain {
 
 			
 
-		}
+		}*/
 
-		return textdescodificado;
+//		return textdescodificado;
 	}
 
 }
