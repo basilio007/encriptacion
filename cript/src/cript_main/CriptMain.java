@@ -14,7 +14,7 @@ public class CriptMain {
 		
 		text.lectordatos();
 		
-		System.out.println(text.encriptar());
+		System.out.println(text.desencriptar());
 		
 	}
 }
