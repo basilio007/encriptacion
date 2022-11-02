@@ -3,14 +3,16 @@ package cript_object;
 import java.util.Scanner;
 
 public class CriptObject {
-
-	private String frase;
-	private int clave;
-	private static char alfabeto[] ={'A','B','C','D','E','F','G','H','I','J','K','L','M',
+	
+	//Variables publicas
+	public String frase;
+	public int clave;
+	public static char alfabeto[] ={'A','B','C','D','E','F','G','H','I','J','K','L','M',
 									 'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 	public void cript_object() {
 		
 	}
+//	funcion que receptora de datos introducidos por el usuario
 	public void lectordatos() {
 		Scanner lector2 = new Scanner(System.in);
 		System.out.println("introduce una frase");
@@ -21,6 +23,7 @@ public class CriptObject {
 				
 		lector2.close();
 				}
+//	metodo Cesar funcion encargada de uncriptar el mensaje del usuario
 public char[] encriptar() {
 	
 	char[] mensajeEncriptado = new char [frase.length()];
@@ -51,8 +54,12 @@ public char[] encriptar() {
 		}
 		
 	}
+	System.out.println("la frase "+frase+" ha sido encriptada ahora se lee");
+	System.out.println();
 	return mensajeEncriptado;
+	
 }
+//metodo Cesar funcion encargada de desencriptar el mensaje del usuario
 public char[] desencriptar() {
 	
 
@@ -84,6 +91,8 @@ public char[] desencriptar() {
 		}
 		
 	}
+	System.out.println("la frase "+frase+" ha sido desencriptada el mensaje oculto era ");
+	System.out.println();
 	return mensajeEncriptado;
 }
 }
