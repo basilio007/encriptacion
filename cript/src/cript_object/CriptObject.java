@@ -12,6 +12,7 @@ public class CriptObject {
 	public void cript_object() {
 		
 	}
+	//ENCRIPTACION METODO CESAR
 //	funcion que receptora de datos introducidos por el usuario
 	public void lectordatos() {
 		Scanner lector2 = new Scanner(System.in);
@@ -59,7 +60,8 @@ public char[] encriptar() {
 	return mensajeEncriptado;
 	
 }
-//metodo Cesar funcion encargada de desencriptar el mensaje del usuario
+//DESENCRIPTACION METODO CESAR
+//funcion encargada de desencriptar el mensaje del usuario
 public char[] desencriptar() {
 	
 
@@ -94,6 +96,20 @@ public char[] desencriptar() {
 	System.out.println("la frase "+frase+" ha sido desencriptada el mensaje oculto era ");
 	System.out.println();
 	return mensajeEncriptado;
+}
+//ENCRIPTACION MONOALFABETICO
+public void reeplarCaracter(String frase) {
+	/*for(int i=0; i<frase.length(); i++) {
+		switch(frase.charAt(i)) {
+		case'z':
+			frase.charAt(i ='a');
+			break;
+			default:
+				frase.charAt(i +1);	
+			
+		}
+	}*/
+	
 }
 }
 
